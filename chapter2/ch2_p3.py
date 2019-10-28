@@ -13,7 +13,7 @@ def main():
     )
     xs = [-2.0, 2.8]
     for x in xs:
-        print(f'x = {x:.{2}f}')
+        print(f'x_0 = {x:.{2}f}')
         x, _ = ch2_p1.newton(f, df, x)
         print(f'    x = {x:.{6}f}')
 

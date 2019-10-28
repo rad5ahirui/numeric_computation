@@ -15,9 +15,9 @@ def bisect(f, a, b):
         if abs(a - b) / 2.0 < EPS:
             break
         fc = f(c)
-        if fc > EPS: # TODO: ちゃんとやる
+        if fc >= EPS: # TODO: ちゃんとやる
             b = c
-        elif fc < EPS:
+        elif fc =< -EPS:
             a = c
         else:
             break
