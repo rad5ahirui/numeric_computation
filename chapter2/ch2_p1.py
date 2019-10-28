@@ -3,8 +3,10 @@
 
 import math
 
-EPS = 1e-6
+EPS = 1e-7
 
+# f(a) < 0, f(b) > 0
+# TODO: 逆の場合も対応
 def bisect(f, a, b):
     n = 0
     while True:
@@ -21,9 +23,8 @@ def bisect(f, a, b):
             break
     return c, n
 
-def newton(f, df, a, b):
+def newton(f, df, x):
     n = 0
-    x = (a + b) / 2.0
     while True:
         n += 1
         new_x = x - f(x) / df(x)
@@ -47,7 +48,7 @@ def main():
         x, n = bisect(f, 0, 1)
         print(f'            x = {x:.{6}f}')
         print(f'    iteration = {n}')
-        x, n = newton(f, df, 0, 1)
+        x, n = newton(f, df, 0.5)
         print("Newton's method:")
         print(f'            x = {x:.{6}f}')
         print(f'    iteration = {n}')
