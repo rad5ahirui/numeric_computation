@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import math
-import operator
-import functools
 
 def L(x, xs, ys):
     y = 0.0
