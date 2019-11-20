@@ -29,7 +29,7 @@ def generate_keys(k, n, p):
         print(f'D[{i + 1}] = ({x}, {y})')
     return Di
 
-# Laglange intreplation l(0) in a finite field Z/p
+# Laglange intreplation l(0) on a finite field Z/p
 def q(p, xs, ys):
     y = 0
     for i, (xi, yi) in enumerate(zip(xs, ys)):
