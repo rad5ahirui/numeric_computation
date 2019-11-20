@@ -9,7 +9,7 @@ import math
 import random
 import functools
 
-def generate_keys(k, n, p):
+def generate_pieces(k, n, p):
     print(f'p = {p}')
     print(f'k = {k}')
     print(f'n = {n}')
@@ -29,7 +29,7 @@ def generate_keys(k, n, p):
         print(f'D[{i + 1}] = ({x}, {y})')
     return Di
 
-# Laglange intreplation l(0) on a finite field Z/p
+# Lagrange intereplation q(0) on a finite field Z/p
 def q(p, xs, ys):
     y = 0
     for i, (xi, yi) in enumerate(zip(xs, ys)):
@@ -70,7 +70,7 @@ def main():
     # The number of pieces
     n = 6
 
-    Di = generate_keys(k, n, p)
+    Di = generate_pieces(k, n, p)
     Dj = random.sample(Di, k)
     print()
     print(f'Get the secret from {k} pieces.')
