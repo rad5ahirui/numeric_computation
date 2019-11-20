@@ -14,9 +14,13 @@ def generate_pieces(k, n, p):
     print(f'k = {k}')
     print(f'n = {n}')
     print()
+
     # D = a[0]
     print(f'Generating {k} coefficients...')
-    a = [random.randrange(p) for i in range(k)]
+    a = [random.randrange(p) for i in range(k - 1)]
+    # a[k - 1] != 0
+    a.append(random.randrange(1, p))
+
     for i, e in enumerate(a):
         print(f'a[{i}]: {e}')
     print()
@@ -78,7 +82,7 @@ def main():
         print(f'{i + 1}: ({x}, {y})')
     print()
     xs, ys = zip(*Dj)
-    print(f'D = l(0) = {q(p, xs, ys)}')
+    print(f'D = q(0) = {q(p, xs, ys)}')
 
 if __name__ == '__main__':
     main()
