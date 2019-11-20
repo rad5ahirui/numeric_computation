@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Reference: Shamir, Adi (1979), "How to share a secret",
-#            Communications of the ACM, 22 (11): 612-6
+#            Communications of the ACM, 22 (11): 612-6,
 #            doi:10.1145/359168.359176.
 
 import math
@@ -47,10 +47,10 @@ def q(p, xs, ys):
         # We want to perform l /= m.
         # In order to do this, we need to find the inverse element of m.
         # Since p is prime, m and p are relatively prime,
-        # and thus there exists an integer q such that
+        # and thus there exists an integer x such that
         #         mx \equiv 1 (mod p)
         # We can find x that is the inverse element of m which we want
-        # by using the Fermat's little theorem.
+        # by using Fermat's little theorem.
         x = pow(m, p - 2, p)
         l *= x
         l %= p
