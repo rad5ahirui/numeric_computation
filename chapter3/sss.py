@@ -22,7 +22,7 @@ def generate_pieces(k, n, p):
     print()
     print(f'Secret has been generated: D = a[0] = {a[0]}')
     print()
-    print(f'Generating {n} pieces of D...')
+    print(f'Generating {n} pieces...')
     Di =  [(x, functools.reduce(lambda s, t: (s * x + t) % p, reversed(a)))
            for x in range(1, n + 1)]
     for i, (x, y) in enumerate(Di):
